@@ -45,6 +45,11 @@ provider:
             Fn::GetAtt:
               - EventDynamoDBTable
               - Arn
+        - Effect: 'Allow'
+          Action:
+            - ses:SendEmail
+          Resource: "*"
+
 package:
   artifact: target/event-dev.jar
 
